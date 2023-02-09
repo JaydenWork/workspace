@@ -168,33 +168,72 @@ public class ConditionEx {
 	
 	public void ex7() {
 		
-		Scanner sc = new Scanner(Systen.in);
+		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("나이 입력 : ");
 		int age = sc.nextInt();
 		
 		String result;
-		if(age < 0 || age > 100)
-			result = "잘못 입력하셨습니다";
-		else if(age < 12)
-			result = "적정 연령이 아닙니다";
-		else
 		
+		if(age < 0 || age > 100) {
+			result = "잘못 입력하셨습니다";
+		} else if(age < 12) {
+			result = "적정 연령이 아닙니다";
+		} else
+			
 		System.out.println("키 입력 : ");
 		double height = sc.nextDouble();
 		
-			if(height<140)
-				result = "적정 키가 아닙니다";
+		if (height<100 || height > 220) {
 			
+			result = "잘못 입력하셨습니다";
+		} else if (height < 140) {
+			result = "적정 키가 아닙니다";
+			
+		} else {
+			result = "탑승 가능";
+		}
 		
+		System.out.println(result);
 		
+					
+	} 
+	
+		//switch 예시 2
+	public void ex2() {
+		//랜덤 팀 배정 프로그램
+		//(백팀 0, 청팀 1, 홍팀2) -> 각 팀별로 숫자 지정 (0,1,2)
 		
+		// * Java 에서 랜덤한 수 (난수) 발생시키는 방법 *
 		
+		// Math.random() : 난수 발생
+		// 1) 난수 발생 범위 : 0.0 <= random < 1.0
+		// 2) 발생한 난수의 자료형 : double
+		//+실수 -> 정수 강제 형변환 : 소수점 버림
+		
+		//Math.random() //0.0 <= random < 1.0
+		//Math.random() * 3 // 0 <= random * 3 < 3.0
+		int random = (int)(Math.random() * 3); // 0<= (int)Math.random() * 3 < 3
+		// 0,1,2 중 하나를 무작위 발생
+		
+		String result;
+		switch(random) {
+		case 0 : result = "백팀"; break;
+		case 1 : result = "청팀"; break;
+		default : result = "홍팀";
+				
+		System.out.println(result);
+		
+		}
 		
 	}
-	
-	
-	}
+		
+		
+		
+}
+
+
+
 
 	
 	

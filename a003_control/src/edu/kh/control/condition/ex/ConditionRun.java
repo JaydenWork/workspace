@@ -13,6 +13,6 @@ public class ConditionRun {
 		// condition.test3();
 		
 		//condition.ex1();
-		  condition.ex6();
+		  condition.ex7();
 	}
 }
