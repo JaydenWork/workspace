@@ -96,12 +96,11 @@ public class ConditionPractice {
 			System.out.println("BMI 지수 : "+ bmi + "\n비만");
 		else if(bmi>= 30)
 			System.out.println("BMI 지수 : "+ bmi + "\n고도비만");
-			
-		
-		
-		
-		
 	}
+	
+	
+	
+	
 	public void practice5() {
 		
 		
@@ -129,7 +128,7 @@ public class ConditionPractice {
 		
 		if(point2<=14) {
 			
-			System.out.printf("Fail [출석 횟수 부족 (%d/20)]",point2);
+			System.out.printf("Fail [출석 횟수 부족 (%d/20)]",(int)point2);
 		}else if(all>=70) {
 			System.out.println("중간 고사 점수(20) : "+a);
 			System.out.println("기말 고사 점수(30) : "+b);
@@ -145,9 +144,6 @@ public class ConditionPractice {
 			System.out.println("총점 : "+ all);
 			System.out.println("Fail");
 		}
-		
-		
-		
 	}
 
 }
