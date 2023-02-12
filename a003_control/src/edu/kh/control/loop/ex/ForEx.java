@@ -352,7 +352,7 @@ public class ForEx {
 		
 		for(int i = input; i>=1; i--) { 	 //i = 3,2,1로 행에 입력되는것이 줄어듬 (첫번째줄은 input개가 입력, 
 											 // 							  두번째 줄은 input-1개가 입력...
-											//								  세번째 줄은 input-2개가 출력
+										//								  세번째 줄은 input-2개가 출력
 			for(int x = i; x>=1; x--) {
 				System.out.print(x);
 			}
