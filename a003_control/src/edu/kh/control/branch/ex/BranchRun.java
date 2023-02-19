@@ -8,9 +8,10 @@ public class BranchRun {
 		//be.ex1();
 		//be.ex2();
 		//be.ex3();
-	 	be.ex5();
+		//be.ex4();
+	 	//be.ex5();
 	 	//be.upDownGame();
-		//be.ex6();
+		be.ex6();
 		
 	}
 }

@@ -15,7 +15,7 @@ public class BranchEx {
 		for(int i = 1; i<= 10000; i++) {
 			System.out.println(i);
 			
-			if(i == 20) { // i가 20인 경
+			if(i == 20) { // i가 20인 경우
 				break; // 반복문 멈춤
 			}
 		}
@@ -83,7 +83,7 @@ public class BranchEx {
 				continue;
 			}
 			
-			System.out.println(i+" ");
+			System.out.print(i+" ");
 			
 		}
 	}

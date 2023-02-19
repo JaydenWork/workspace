@@ -98,8 +98,10 @@ public class ConditionEx {
 		
 		if(age <= 13) 
 		result = "어린이";
+		
 		 else if(age > 13 && age <= 19) 
 		result = "청소년";
+		
 		 else 
 		result = "성인";
 		
