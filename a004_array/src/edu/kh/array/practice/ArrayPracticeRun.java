@@ -34,7 +34,9 @@ public class ArrayPracticeRun {
 		case 15 : ap.practice15(); break;
 		case 16 : ap.practice16(); break;
 		case 17 : ap.practice17(); break;
-		
+		case 18 : ap.practice18(); break;
+		case 19 : ap.practice19(); break;
+		case 20 : ap.practice20(); break;
 		
 		default : System.out.println("존재하지 않는 예시 번호 입니다.");
 		}

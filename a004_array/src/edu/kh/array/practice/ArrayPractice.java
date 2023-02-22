@@ -368,97 +368,197 @@ public class ArrayPractice {
 //
 //	}
 		Scanner sc = new Scanner(System.in);
-		
+
 		String[] array = null;
 		String[] newArray = null;
 		int size;
 		char moreInput;
-		int moreInputCount=0;
-		 
+		int moreInputCount = 0;
+
 		System.out.print("배열의 크기를 입력하세요 : ");
 		size = sc.nextInt();
 		sc.nextLine();
-		
+
 		array = new String[size];
-		
-		for(int i=0; i<array.length; i++) {
-			System.out.printf("%d번째 문자열 : ",i+1);
+
+		for (int i = 0; i < array.length; i++) {
+			System.out.printf("%d번째 문자열 : ", i + 1);
 			array[i] = sc.nextLine();
 		}
-		
-		while(true) {
-			
+
+		while (true) {
+
 			System.out.print("더 값을 입력하시겠습니까? (Y/N) : ");
 			moreInput = sc.next().charAt(0);
-			
-			if(moreInput == 'N' || moreInput =='n')
+
+			if (moreInput == 'N' || moreInput == 'n')
 				break;
-			
-			if(moreInput == 'Y' || moreInput=='y') {
-				
+
+			if (moreInput == 'Y' || moreInput == 'y') {
+
 				System.out.print("더 입력하고 싶은 개수 : ");
 				moreInputCount = sc.nextInt();
 				sc.nextLine();
-				
+
 				newArray = new String[array.length + moreInputCount];
-				
+
 				System.arraycopy(array, 0, newArray, 0, array.length);
-				
-				for(int i=array.length; i<newArray.length; i++) {
-					System.out.printf("%d 문자열 : ",i+1);
+
+				for (int i = array.length; i < newArray.length; i++) {
+					System.out.printf("%d 문자열 : ", i + 1);
 					newArray[i] = sc.nextLine();
 				}
 				array = newArray;
 			}
 		}
-		if(newArray==null) 
+		if (newArray == null)
 			System.out.println(Arrays.toString(array));
 		else
 			System.out.println(Arrays.toString(newArray));
-		
-		
-		
+
 	}
-	
+
 	public void practice15() {
-		
+
 		String[][] array = new String[3][3];
-		
-		for(int i=0; i<array.length; i++) {
-			for(int j=0; j<array[i].length; j++) {
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
 				array[i][j] = "(" + i + "," + j + ")";
 				System.out.print(array[i][j]);
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void practice16() {
-		
+
 		int[][] array = new int[4][4];
 		int count = 1;
-		
-		for(int i=0; i<array.length; i++) {
-			for(int j=0; j<array[i].length;j++) {
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
 				array[i][j] = count++;
-				System.out.print(array[i][j]+" ");
+				System.out.print(array[i][j] + " ");
 			}
 			System.out.println();
 		}
 	}
-	
+
 	public void practice17() {
-		
+
 		int[][] array = new int[4][4];
 		int count = 16;
-		
-		for(int i=0; i<array.length; i++) {
-			for(int j=0; j<array[i].length;j++) {
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
 				array[i][j] = count--;
-				System.out.print(array[i][j]+" ");
+				System.out.print(array[i][j] + " ");
 			}
 			System.out.println();
 		}
+	}
+
+	public void practice18() {
+
+		int[][] arr = new int[4][4];
+
+		for (int i = 0; i < arr.length - 1; i++) {
+			for (int j = 0; j < arr[i].length - 1; j++) {
+				if (i != arr.length && j != arr.length) {
+					arr[i][j] = (int) (Math.random() * 10 + 1);
+
+					System.out.print(arr[i][j] + " ");
+				} else if (i == 0 && j == 2) {
+					arr[0][2] += arr[i][j];
+				} else if (i == 1 && j == 2) {
+					arr[1][2] += arr[i][j];
+				} else if (i == 2 && j == 2) {
+					arr[2][2] += arr[i][j];
+				} else if (i == 2 && j == 0) {
+					arr[2][0] += arr[i][j];
+				} else if (i == 2 && j == 1) {
+					arr[2][1] += arr[i][j];
+				} else {
+					arr[2][2] += arr[i][j];
+				}
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void practice19() {
+
+		Scanner sc = new Scanner(System.in);
+
+		int rowSize;
+		int colSize;
+		char[][] array;
+
+		while (true) {
+
+			System.out.print("행 크기 : ");
+			rowSize = sc.nextInt();
+
+			if (rowSize < 1 || rowSize > 10) {
+				System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+			} else
+				break;
+		}
+
+		while (true) {
+
+			System.out.print("열 크기 : ");
+			colSize = sc.nextInt();
+
+			if (colSize < 1 || colSize > 10) {
+				System.out.println("반드시 1~10 사이의 정수를 입력해야 합니다.");
+			} else
+				break;
+		}
+
+		array = new char[rowSize][colSize];
+
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				array[i][j] = (char) (Math.random() * ('Z' - 'A' + 1) + 'A');
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void practice20() {
+
+		Scanner sc = new Scanner(System.in);
+
+	
+
+		System.out.print("행의 크기 : ");
+		int rowCount = sc.nextInt();
+		
+		char[][] arr = new char[rowCount][];
+		for (int i = 0; i < rowCount; i++) {
+			System.out.print(i + " 열의 크기 : ");
+			int colCount = sc.nextInt();
+			arr[i] = new char[colCount];
+		}
+		
+		int index = 0;
+		
+		for(int i = 0; i < rowCount; i++) {
+			for(int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = (char)(Math.random() * ('Z' - 'A' + 1) + 'A');
+				System.out.print(arr[i][j] + " ");
+				index++;
+			}
+			System.out.println();
+		}
+		
+		
+
 	}
 
 }
