@@ -3,7 +3,9 @@ package edu.kh.objectarray.view;
 import java.util.Scanner;
 
 import edu.kh.objectarray.dto.Student;
+import edu.kh.objectarray.dto.Teacher;
 import edu.kh.objectarray.service.StudentService;
+import edu.kh.objectarray.service.TeacherService;
 
 public class StudentView {
 	
@@ -11,7 +13,7 @@ public class StudentView {
 	
 	private StudentService service = new StudentService();
 
-	
+	private TeacherService teacherService = new TeacherService();
 	
 	public void displayMenu() {
 	
@@ -25,6 +27,7 @@ public class StudentView {
 			System.out.println("4. 학생 정보 조회(이름)");
 			System.out.println("5. 학생 정보 수정(인덱스)	");
 			System.out.println("6. 점수 합계, 평균, 최고점, 최저점 조회	");
+			System.out.println("7. 선생님 전체 조회");
 			System.out.println("0. 종료");
 			System.out.println("--------------------------");
 			
@@ -40,6 +43,7 @@ public class StudentView {
 			case 4 : selectName(); break; 
 			case 5 : updateStudent(); break;
 			case 6 : sumAvgMaxMin(); break;
+			case 7 : teacherIndex(); break;
 			
 			case 0 : System.out.println("[프로그램이 종료됩니다.]");break; 
 			default : System.out.println("[잘못 입력 하셨습니다.]");
@@ -110,7 +114,8 @@ public class StudentView {
 			
 			//Student 객체가 가지고 있는 toString() 메서드를 호출해서
 			//학생 정보를 문자열로 반환 받아 출력
-			System.out.println( studentList[i].toString() );
+			studentList[i].PrintMyInfo();
+			//System.out.println( studentList[i].toString() );
 			
 			//NullPointerException
 			//-> 참조하고있는 객체가 없는
@@ -232,5 +237,24 @@ public class StudentView {
 		System.out.println("최저점 : " 	+ arr[3]);
 		
 		
+	}
+	// ** 7. 선생님 조회 */
+	public void teacherIndex() {
+		
+		System.out.println("[선생님 전체 조회]");
+		
+		Teacher teacherIndex[] = service.indexAll();
+		
+		
+	}
+
+
+	public TeacherService getTeacherService() {
+		return teacherService;
+	}
+
+
+	public void setTeacherService(TeacherService teacherService) {
+		this.teacherService = teacherService;
 	}
 }

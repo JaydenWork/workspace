@@ -57,7 +57,7 @@ public class Child1 extends Parent{
 		//return car + "/" + getMoney() + "/" + getLastName();
 		
 		
-		//문제점 : StackOverflowEroor 발
+		//문제점 : StackOverflowEroor 발생
 		//원 인 : Child의 toString() 호출 시
 		//  	 같은 toString()은 계속 반복해서 호출(==재귀 호출)
 		

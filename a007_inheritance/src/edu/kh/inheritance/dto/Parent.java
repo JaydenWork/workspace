@@ -2,7 +2,7 @@ package edu.kh.inheritance.dto;
 
 public class Parent {
 
-	private int money = 400_000_000; // 돈
+	private int money = 400_000_000; // 돈  // 인스턴스 변
 	private String lastName = "박"; // 성
 	
 	//기본 생성

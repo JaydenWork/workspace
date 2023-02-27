@@ -8,10 +8,10 @@ public class Car {
 	private String fuel; // 연료
 	
 	
-	//생성자
+	//기본 생성자
 	public Car() {}
 	
-	
+	//매개변수 생성자
 	public Car(int wheel, int seat, String fuel) {
 		super();
 		this.wheel = wheel;

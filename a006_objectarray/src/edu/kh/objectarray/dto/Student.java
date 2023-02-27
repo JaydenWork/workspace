@@ -90,4 +90,9 @@ public class Student {
 		
 	}
 	
+	public void PrintMyInfo()
+	{
+		System.out.println(toString());
+	}
+	
 }

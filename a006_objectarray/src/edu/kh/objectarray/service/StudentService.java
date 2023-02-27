@@ -4,13 +4,15 @@ import java.util.Arrays;
 import java.util.Random;
 
 import edu.kh.objectarray.dto.Student;
-
+import edu.kh.objectarray.dto.Teacher;
 
 // 기능 제공용 클래스(비즈니스 로직 처리)
 public class StudentService {
 
 	// Student 객체 참조변수 5개짜리 배열을 생성해서 studentArr 참조
 	private Student[] studentArr = new Student[5];
+	private Teacher[] teacherArr = new Teacher[3];
+
 
 	// StudentService 기본 생성자
 	public StudentService() {
@@ -22,15 +24,18 @@ public class StudentService {
 		studentArr[1] = new Student(2, 3, 5, "정병종");
 
 		studentArr[2] = new Student(1, 7, 9, "정민영");
+		
+		
 
 		// 학생 랜덤 점수 추가
 		Random random = new Random();
 
 		for (Student s : studentArr) {
 
-			if (s == null) break;
+			if (s == null)
+				break;
 
-			//(int)(Math.random()*101) == random.nextInt(101)
+			// (int)(Math.random()*101) == random.nextInt(101)
 			s.setKor(random.nextInt(101));
 			s.setEng(random.nextInt(101));
 			s.setMath(random.nextInt(101));
@@ -72,8 +77,6 @@ public class StudentService {
 			}
 		}
 
-		// 만약 비어있는 인덱스가 없을 경우
-		// -> false반환
 		return false;
 	}
 
@@ -182,64 +185,75 @@ public class StudentService {
 
 	}
 
-	/** 6. 학생 총점 접수 합계, 평균,최고점, 최저점
+	/**
+	 * 6. 학생 총점 접수 합계, 평균,최고점, 최저점
 	 * 
 	 * @return arr : int[] (인덱스 순서대로 총점, 평균, 최고점, 최저점)
 	 * 
 	 */
 
 	public int[] sumAvgMaxMin() {
-		
+
 		int[] arr = new int[4];
-		
+
 		int size = 0;
-		
-		for(int i=0; i<studentArr.length;i++) {
-			if(studentArr[i] == null) {
+
+		for (int i = 0; i < studentArr.length; i++) {
+			if (studentArr[i] == null) {
 				break;
-			}else {
+			} else {
 				size++;
 			}
 		}
-		
+
 		// 존재하는 학생의 합계를 저장할 배열
 		int[] sumArr = new int[size];
-		
-		for(int i=0; i< sumArr.length; i++) {
-			
+
+		for (int i = 0; i < sumArr.length; i++) {
+
 			// 학생 한명의 점수 합
-			sumArr[i] = studentArr[i].getKor()
-					  + studentArr[i].getEng() 
-					  + studentArr[i].getMath() ;
-			
-			//전체 학생의 점수 합
+			sumArr[i] = studentArr[i].getKor() + studentArr[i].getEng() + studentArr[i].getMath();
+
+			// 전체 학생의 점수 합
 			arr[0] += sumArr[i];
-			
+
 		}
-		
+
 		// 전체 총점 평균
 		arr[1] = arr[0] / size;
-		
-		int max = sumArr[0]; 	// 최고점
-		int min = sumArr[0]; 	// 최저점
-		
-		
-		
-		for(int s : sumArr) {
-			
-			if(s> max) max = s;
-			if(s< min) min = s;
+
+		int max = sumArr[0]; // 최고점
+		int min = sumArr[0]; // 최저점
+
+		for (int s : sumArr) {
+
+			if (s > max)
+				max = s;
+			if (s < min)
+				min = s;
 		}
-		
-		
+
 		arr[2] = max;
 		arr[3] = min;
-		
-		
+
 		System.out.println(Arrays.toString(sumArr));
-		
+
 		return arr;
+	}
+
+	/**
+	 * 7. 선 전체 조회 서비스
+	 * 
+	 * 
+	 * 
+	 **/
+
+	public Teacher[] indexAll() {
+
+		// studentArr를 반환
+		return teacherArr;
 	}
 
 
 }
+

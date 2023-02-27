@@ -1,6 +1,7 @@
 package edu.kh.array.practice;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ArrayPractice {
@@ -461,27 +462,60 @@ public class ArrayPractice {
 
 	public void practice18() {
 
+//		int[][] arr = new int[4][4];
+//
+//		for (int i = 0; i < arr.length - 1; i++) {
+//			for (int j = 0; j < arr[i].length - 1; j++) {
+//				if (i != arr.length && j != arr.length) {
+//					arr[i][j] = (int) (Math.random() * 10 + 1);
+//
+//					System.out.print(arr[i][j] + " ");
+//				} else if (i == 0 && j == 2) {
+//					arr[0][2] += arr[i][j];
+//				} else if (i == 1 && j == 2) {
+//					arr[1][2] += arr[i][j];
+//				} else if (i == 2 && j == 2) {
+//					arr[2][2] += arr[i][j];
+//				} else if (i == 2 && j == 0) {
+//					arr[2][0] += arr[i][j];
+//				} else if (i == 2 && j == 1) {
+//					arr[2][1] += arr[i][j];
+//				} else {
+//					arr[2][2] += arr[i][j];
+//				}
+//			}
+//			System.out.println();
+//		}
+
+		// 1. 4행 4열 2차원 배열 생성
 		int[][] arr = new int[4][4];
 
-		for (int i = 0; i < arr.length - 1; i++) {
-			for (int j = 0; j < arr[i].length - 1; j++) {
-				if (i != arr.length && j != arr.length) {
-					arr[i][j] = (int) (Math.random() * 10 + 1);
+		final int LAST_ROW_INDEX = arr.length - 1; // 행 마지막 인덱스
+		final int LAST_COL_INDEX = arr[0].length - 1; // 열 마지막 인덱스
 
-					System.out.print(arr[i][j] + " ");
-				} else if (i == 0 && j == 2) {
-					arr[0][2] += arr[i][j];
-				} else if (i == 1 && j == 2) {
-					arr[1][2] += arr[i][j];
-				} else if (i == 2 && j == 2) {
-					arr[2][2] += arr[i][j];
-				} else if (i == 2 && j == 0) {
-					arr[2][0] += arr[i][j];
-				} else if (i == 2 && j == 1) {
-					arr[2][1] += arr[i][j];
-				} else {
-					arr[2][2] += arr[i][j];
-				}
+		// 2. 0행 0열 ~ 2행 2열까지 1~10 사이 난수 대입
+
+		Random random = new Random();
+
+		for (int row = 0; row < LAST_ROW_INDEX; row++) {
+			for (int col = 0; col < LAST_COL_INDEX; col++) {
+
+				arr[row][col] = random.nextInt(10) + 1;
+
+				// 3행 3열에 발생된 난수 모두 누적
+				arr[LAST_ROW_INDEX][LAST_COL_INDEX] += arr[row][col];
+
+				// 난수 대입과 동시에 해당 행/열의 끝에 누적
+				arr[row][LAST_COL_INDEX] += arr[row][col]; // 각 행 마지막 열에 누적
+				arr[LAST_ROW_INDEX][col] += arr[row][col]; // 각 열 마지막 행에 누적
+
+			}
+		}
+
+		// 출력용 2중 for문
+		for (int row = 0; row <= LAST_ROW_INDEX; row++) {
+			for (int col = 0; col <= LAST_COL_INDEX; col++) {
+				System.out.printf("%3d", arr[row][col]);
 			}
 			System.out.println();
 		}
@@ -534,30 +568,26 @@ public class ArrayPractice {
 
 		Scanner sc = new Scanner(System.in);
 
-	
-
 		System.out.print("행의 크기 : ");
 		int rowCount = sc.nextInt();
-		
+
 		char[][] arr = new char[rowCount][];
 		for (int i = 0; i < rowCount; i++) {
 			System.out.print(i + " 열의 크기 : ");
 			int colCount = sc.nextInt();
 			arr[i] = new char[colCount];
 		}
-		
+
 		int index = 0;
-		
-		for(int i = 0; i < rowCount; i++) {
-			for(int j = 0; j < arr[i].length; j++) {
-				arr[i][j] = (char)(Math.random() * ('Z' - 'A' + 1) + 'A');
+
+		for (int i = 0; i < rowCount; i++) {
+			for (int j = 0; j < arr[i].length; j++) {
+				arr[i][j] = (char) (Math.random() * ('Z' - 'A' + 1) + 'A');
 				System.out.print(arr[i][j] + " ");
 				index++;
 			}
 			System.out.println();
 		}
-		
-		
 
 	}
 
