@@ -1,44 +1,61 @@
 package edu.kh.jdbc.dto;
 
 public class Employee2 {
-	//부서명, 직급명, 이름, 이메일
-	private String departmentTitle;
+	// 부서명, 직급명, 이름, 이메일
+	
+	private String departmentName;
 	private String jobName;
-	private String name;
+	private String employeeName;
 	private String email;
 	
-	public Employee2() {};
-	
-	public Employee2(String departmentTitle, String jobName, String name, String email) {
-		this.departmentTitle = departmentTitle;
+	public Employee2() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Employee2(String departmentName, String jobName, String employeeName, String email) {
+		super();
+		this.departmentName = departmentName;
 		this.jobName = jobName;
-		this.name = name;
+		this.employeeName = employeeName;
 		this.email = email;
-		
 	}
-	public String getDepartmentTitle() {
-		return departmentTitle;
+
+	public String getDepartmentName() {
+		return departmentName;
 	}
-	public void setDepartmentTitle(String departmentTitle) {
-		this.departmentTitle = departmentTitle;
+
+	public void setDepartmentName(String departmentName) {
+		this.departmentName = departmentName;
 	}
+
 	public String getJobName() {
 		return jobName;
 	}
+
 	public void setJobName(String jobName) {
 		this.jobName = jobName;
 	}
-	public String getName() {
-		return name;
+
+	public String getEmployeeName() {
+		return employeeName;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("%s / %s / %s / %s", 
+					departmentName, jobName, employeeName, email);
 	}
 	
 	
