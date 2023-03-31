@@ -31,8 +31,7 @@ public class MainDAO {
 		try {
 			prop = new Properties();
 			prop.loadFromXML(new FileInputStream("main-sql.xml"));
-			// -> Properties 객체에
-			//    key:value 형식으로 xml내용이 저장됨
+			// -> Properties 객체에			//    key:value 형식으로 xml내용이 저장됨
 			
 			// -> prop.getProperty("key") 호출
 			//   --> value (SQL) 반환
@@ -42,6 +41,8 @@ public class MainDAO {
 		}
 		
 	}
+
+	
 
 
 	/** 아이디, 비밀번호 일치 회원 조회
@@ -60,7 +61,7 @@ public class MainDAO {
 			// 2. SQL 작성 후 수행
 			String sql = prop.getProperty("login");
 			
-			// PreaparedStatement 객체를 생성하고 SQL를 담아둠
+			// PreparedStatement 객체를 생성하고 SQL를 담아둠
 			pstmt = conn.prepareStatement(sql);
 			
 			// placeholder에 알맞은 값 대입

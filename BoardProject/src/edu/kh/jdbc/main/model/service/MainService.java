@@ -14,9 +14,10 @@ public class MainService {
 	/** 로그인 서비스
 	 * @param memberId
 	 * @param memberPw
-	 * @return member
+	 * @return Member
 	 * @throws Exception
 	 */
+		  //반환
 	public Member login(String memberId, String memberPw) throws Exception{
 		
 		// 1. Connection 생성

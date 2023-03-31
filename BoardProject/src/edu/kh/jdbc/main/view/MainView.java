@@ -86,7 +86,7 @@ public class MainView {
 					}
 				}
 				
-			}catch (Exception e) {
+			}catch (InputMismatchException e) {
 				System.out.println("\n*** 입력 형식이 올바르지 않습니다***\n");
 				sc.nextLine(); // 입력버퍼에 잘못된 문자열 제거
 				input = -1; // while문 종료 방지
@@ -103,7 +103,7 @@ public class MainView {
 	 * 로그인
 	 */
 	private void login() {
-		System.out.println("\n[로그인]\n");
+		System.out.println("\n[로그인]\n");// 아이디 & 비밀번호 입력받기
 		
 		System.out.print("아이디 : ");
 		String memberId = sc.next();
@@ -114,18 +114,21 @@ public class MainView {
 		try {
 			// 로그인 서비스 호출 후 결과 반환 받기
 			// -> 반환 받은 결과는 Session.loginMember에 저장
-			Session.loginMember = service.login(memberId, memberPw);
+			Session.loginMember = service.login(memberId, memberPw); // login() 메서드를 호출하면 memberId, memberPw 두개를 전달하겠다(db에 저장되어있는 값을 가져와 저)
+																		//-> 어디에? -> Session.loginMember에 
+																		//-> Session.loginMember이 null로 초기화 되어 있었는데 이제 null값이 아님
+																		//-> 로그인 상태 ===> service에서 처리한다 == service에 login 메소드 생성
 			
-			if(Session.loginMember == null) { // 로그인 실패
+			if(Session.loginMember == null)  { // 로그인 실패
 				System.out.println("\n*** 아이디/비밀번호가 일치하지 않습니다. ***\n");
 			}else {
 				System.out.printf("\n=== %s님 환영합니다 ===\n\n",
 								Session.loginMember.getMemberName());
 			}
 			
-		}catch (Exception e) {
+		}catch (Exception e) {// 발생하는 모든 Exception을 잡겠다
 			System.out.println("\n***** 로그인 중 예외 발생 *****\n");
-			e.printStackTrace();
+			e.printStackTrace(); // 예외 설명
 		}
 		
 	}
