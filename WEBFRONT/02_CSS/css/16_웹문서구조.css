@@ -1,0 +1,285 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; /*모든 마진 없애고 시작*/
+}
+
+div,
+main,
+section,
+header,
+footer,
+article,
+nav,
+aside,
+form {
+  /* border: 1px solid black; 다 만들고 지울것(테두리) */
+}
+main {
+  width: 1140px;
+  margin: auto; /*양쪽 여백을 일정 길이만큼 떨어지게 한다*/
+
+  /*min-height :  요소의 최소 높이
+                -> 내부 요소가 없어도 최소 높이 유지
+                -> 내부 요소가 지정된 크기를 초과하면
+                    그에 맞게 늘어남*/
+
+  min-height: 500px;
+}
+
+header {
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  height: 200px;
+  flex-direction: row;
+}
+
+header > section:nth-child(1) {
+  width: 15%;
+}
+header > section:nth-child(2) {
+  width: 70%;
+}
+.header > section:nth-child(3) {
+  width: 15%;
+}
+
+/* nav */
+nav {
+  height: 50px;
+
+  position: sticky;
+  /*화면 밖으로 벗어났을 때
+    지정된 위치에 고정*/
+
+  top: 0; /*최상단에 붙임*/
+  background-color: white;
+  border-bottom: 2px solid black;
+
+  z-index: 1000;
+}
+
+nav > ul {
+  display: flex;
+
+  /* li 태그 앞에 기호 삭제 */
+  list-style: none;
+  height: 100%;
+}
+
+nav li {
+  flex: 0 1 150px;
+  /* grow shrink basis */
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 13px 0;
+  display: block;
+  text-align: center;
+  border-radius: 10px;
+  transition-duration: 0.2s;
+  height: 100%;
+}
+
+nav a:hover {
+  color: white;
+  background-color: goldenrod;
+}
+
+.content {
+  height: 800px;
+  display: flex;
+  /* justify-content: space-between;
+  align-items: center; */
+  flex-direction: row;
+  align-items: stretch;
+  /* justify-content: flex-start; */
+}
+
+.content-1 {
+  width: 70%;
+  /* flex-basis:70%; */
+  padding: 20px;
+}
+
+.content-1 > * {
+  margin-bottom: 20px;
+}
+.content-2 {
+  width: 30%;
+}
+
+header > section:first-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#homeLogo {
+  width: 150px;
+  height: auto; /**/
+}
+
+.search-area {
+  width: 500px;
+}
+header > section:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-area fieldset {
+  border: 2px solid darkgoldenrod;
+  padding: 2px;
+  border-radius: 5px;
+  display: flex;
+}
+
+/* 검색창 */
+#query {
+  border: none; /*테두리 없애기*/
+
+  /* outline : 포커스가 맞춰진 input의 테두리*/
+  /* outline : none */
+  outline: 0;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+
+  width: 92%;
+}
+
+/* 검색버튼 */
+#searchBtn {
+  width: 8%;
+  cursor: pointer;
+  border: none;
+
+  font-size: 1.2em;
+  color: darkgoldenrod;
+  background-color: white;
+}
+
+/* 로그인 영역 */
+
+.content-2 > form {
+  height: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.id-pw-area {
+  border: 1px solid #ccc;
+  display: flex;
+
+  /* 중심축 방향 크기 지정 */
+  flex-basis: 60%;
+}
+
+/* id/pw 입력 영역 */
+.id-pw-area > section:first-child {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.id-pw-area > section:first-child > input {
+  border: 0;
+  border-right: 1px solid #ccc;
+  flex-basis: 50%;
+  outline: none;
+  padding: 5px;
+}
+
+/* 로그인 버튼 영역 */
+.id-pw-area > section:last-child {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+}
+
+/* id / pw 에 초점이 맞춰졌을 때*/
+.id-pw-area > section:first-child > input:focus {
+  border: 3px solid burlywood !important;
+}
+
+/* id input 태그 */
+input[name='inputId'] {
+  border-bottom: 1px solid #ccc !important;
+}
+
+/* 로그인 버튼 */
+.id-pw-area > section:last-child > button {
+  width: 100%;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+}
+/* 로그인 버튼에 마우스가 올라갔을 때  */
+.id-pw-area > section:last-child > button:hover {
+  background-color: darkgoldenrod;
+  color: white;
+}
+/* 아이디 저장 label */
+.content-2 label {
+  margin-top: 5px;
+  font-size: 14px;
+  display: flex;
+  padding: 5px 0;
+}
+
+input[name='saveId'] {
+  margin-right: 5px;
+}
+
+/* 회원가입, id/pw 찾기 영역 */
+.signup-find-area {
+  margin-top: 10px;
+  padding-left: 5px;
+}
+
+.signup-find-area > a {
+  color: black;
+  text-decoration: none;
+  font: size 14px;
+}
+
+.signup-find-area > span {
+  padding: 0 10px;
+}
+
+footer {
+  height: 200px;
+  background-color: #a3add342;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center; /*안에 작성될 내용들이 가운데에 작성됨*/
+  align-items: center;
+}
+
+footer > p {
+  font-weight: bold;
+  margin: 16px 0;
+}
+
+footer > article > * {
+  font-size: 14px;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer span {
+  padding: 0 10px;
+}

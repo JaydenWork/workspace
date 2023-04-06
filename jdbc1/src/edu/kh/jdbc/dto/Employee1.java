@@ -1,6 +1,6 @@
 package edu.kh.jdbc.dto;
 
-//DTO (Data Transfer Object) : 값 전달용 객체
+//DTO (Data Transfer Object) : 값 전달용 객체 -> DAO에서 꺼낸 값들(한 행에 있는 쿼리 결과 정보)을 example3로 다시 전달해주는 객체
 public class Employee1 {
 
 	private String empId;

@@ -18,7 +18,7 @@ public class JDBCExample1 {
 		
 		/*  ** JDBC를 이용한 애플리케이션 제작 시 필요한 것 &&
 		 * 
-		 * 1. Java의 JDBC 관련 인터페이
+		 * 1. Java의 JDBC 관련 인터페이스
 		 * 2. DBMS의 종류(Oracle)
 		 * 3. DBMS 회사에서 제공하는 JAVA애플리케이션과 DB연결을 위한 라이브러리
 		 * 	  (ojdbc11.jar -> OracleDriver.class)
@@ -38,7 +38,7 @@ public class JDBCExample1 {
 		// 왜 Connection은 인터페이스일까??
 		// -> DBMS마다 연결 정보, 방법이 다르기 때문에
 		//	  상속을 받아 공통된 부분을 DBMS 마다 알맞게 구현하고
-		//	  구현된 객체를 Java에서 참조해서 사
+		//	  구현된 객체를 Java에서 참조해서 사용
 		
 		Statement stmt = null;
 		// sql을 DB에 전달해 수행하고 

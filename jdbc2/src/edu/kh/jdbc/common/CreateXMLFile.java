@@ -15,7 +15,7 @@ public class CreateXMLFile {
 		// Map(Key : Value)
 		
 		//<comment> 값입니다. </comment>
-		
+			//Key	//Value
 		// XML에 저장되는 데이터의 형식은 Map(Key : Value) 형식이다.
 		// -> Key, Value 모두 문자열(String) 형식
 		// -> Map<String, String>

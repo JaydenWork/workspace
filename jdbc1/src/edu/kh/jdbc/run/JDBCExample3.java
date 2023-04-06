@@ -40,8 +40,8 @@ public class JDBCExample3 {
 			return;
 		}
 		
-		// 향상된 for문
-		//ㅇ른쪽에는 배열이나 컬렉션/ 왼쪽에는 empList 한 개를 저장할 변수
+		// 향상된 for문 
+		//오른쪽에는 배열이나 컬렉션/ 왼쪽에는 empList 한 개를 저장할 변수
 		for(Employee1 emp : empList) {
 			
 			System.out.printf("부서: %s / 사번: %s / 이름: %s / 급여: %d \n",

@@ -64,7 +64,7 @@ public class MainDAO {
 			// PreparedStatement 객체를 생성하고 SQL를 담아둠
 			pstmt = conn.prepareStatement(sql);
 			
-			// placeholder에 알맞은 값 대입
+			// placeholder에 알맞은 값 대입 ( ? ) 값을 대입 후 확
 			pstmt.setString(1, memberId);
 			pstmt.setString(2, memberPw);
 			
