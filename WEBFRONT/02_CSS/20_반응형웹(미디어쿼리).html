@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>16_웹문서구조</title>
+    <title>20_반응형웹(미디어쿼리)</title>
     <link rel="stylesheet" href="css/16_웹문서구조.css" />
+    <link rel="stylesheet" href="css/20_반응형웹(미디어쿼리).css" />
 
     <!-- font awesome에서 발급받은 키 
          font awesome 라이브러리 추가 + key 등록-->
@@ -20,7 +21,7 @@
         <section>
           <!-- 클릭 시 메인 페이지로 이동하는 로고 -->
           <a href="#"></a>
-          <img src="../images/dogs/순덕.png" alt="로고" id="homeLogo" />
+          <img src="../images/dogs/순덕이.png" alt="로고" id="homeLogo" />
         </section>
         <section>
           <!-- 검색어 입력할 수 있는 요소 배치 -->
@@ -57,7 +58,17 @@
         <section></section>
       </header>
 
+      <button
+        type="button"
+        class="fa-solid fa-bars nav-btn"
+        id="openBtn"
+      ></button>
       <nav>
+        <button
+          type="button"
+          class="fa-solid fa-bars nav-btn"
+          id="closeBtn"
+        ></button>
         <ul>
           <li><a href="#">공지사항</a></li>
           <li><a href="#">자유 게시판</a></li>
@@ -129,5 +140,35 @@
         <a href="#">고객센터</a>
       </article>
     </footer>
+
+    <script>
+      // 자바스크립트 작성 영역
+
+      //열기 버튼
+      const openBtn = document.getElementById('openBtn');
+
+      //닫기 버튼
+      const closeBtn = document.getElementById('closeBtn');
+
+      //nav 요소
+      const nav = document.querySelector('nav');
+
+      //열기 버튼을 누르면 nav의 display가 flex로 변경
+      openBtn.addEventListener('click', () => {
+        nav.style.display = 'flex';
+      });
+
+      //열기 버튼을 누르면 nav의 디스플레이가 none으로 변경
+      closeBtn.addEventListener('click', function () {
+        nav.style.display = 'none';
+      });
+
+      /*화면 너비가 1024px을 초과했을 때 nav의 style 속성 제거*/
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+          nav.removeAttribute('style');
+        }
+      });
+    </script>
   </body>
 </html>
