@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_4_간이계산기만들기</title>
+    <style></style>
+    <script>
+      function calculator(op) {
+        const input1 = Number(document.getElementById('input1').value);
+        const input2 = Number(document.getElementById('input2').value);
+
+        //eval("코드 형식의  문자열 ")
+        // --> 작성된 문자열을 JS 코드로 해석하는 함수
+        // -> 속도 + 보안 이슈 때문에 사용을 지양(쓰지마......)
+
+        // -> new Function (" return 코드 형시의 문자열")()로 문제 해결
+        //
+        document.getElementById('result').innerText =
+          /* eval( */
+          //   input1 + op.innerText + input2
+          new Function('return ' + input1 + op.innerText + input2)();
+        // input1 + "+" + input2 -> "10+20"
+        //   10             20
+      }
+    </script>
+  </head>
+  <body>
+    두 수를 입력 받아 버튼에 작성된 연산을 수행하는 계산기 만들기
+
+    <hr />
+
+    첫 번째 값 : <input type="text" id="input1" /><br />
+    두 번째 값 : <input type="text" id="input2" /><br />
+
+    <button onclick="calculator(this)">+</button>
+    <button onclick="calculator(this)">-</button>
+    <button onclick="calculator(this)">*</button>
+    <button onclick="calculator(this)">/</button>
+    <button onclick="calculator(this)">%</button>
+
+    <br /><br />
+    계산 결과 : <span id="result"></span>
+
+    <script>
+      // 작성된 html 요소에 원하는 속성(id, class, onclick)을 작성하고
+      // 필요한 js 코드(function)를 이용하여 계산기 만들기
+    </script>
+  </body>
+</html>

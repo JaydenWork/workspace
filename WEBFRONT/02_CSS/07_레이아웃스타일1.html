@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>07_레이아웃 스타일 1</title>
 
-    <link rel="stylesheet" href="css/07_레이아웃스타일1.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="css/07_레이아웃스타일1.css">
+</head>
+<body>
     <h1>레이아웃(Layout)</h1>
     <pre>
         사전적 의미 : 배치, 정리
         기술적 의미 : 구성 요소를 제한된 공간에 효율적을 배치하는 것을 의미
     </pre>
 
-    <hr />
+    <hr>
 
     <h1>화면 배치 방법(형식) : display 속성</h1>
 
@@ -40,8 +40,9 @@
                 복잡한 레이아웃을 쉽게 배치할 수 있게 제공
     </pre>
 
-    <h3>block 형식의 요소(div)를 inline으로 변경</h3>
 
+    <h3>block 형식의 요소(div)를 inline으로 변경</h3>
+    
     <!-- div.block.area$.inline*5{$번 영역} -->
     <div class="block area1 inline">1번 영역</div>
     <div class="block area2 inline">2번 영역</div>
@@ -49,7 +50,8 @@
     <div class="block area4 inline">4번 영역</div>
     <div class="block area5 inline">5번 영역</div>
 
-    <hr />
+
+    <hr>
 
     <h3>inline 형식의 요소(span)를 block으로 변경</h3>
     <span class="area1 block">1번 영역</span>
@@ -58,7 +60,7 @@
     <span class="area4 block">4번 영역</span>
     <span class="area5 block">5번 영역</span>
 
-    <hr />
+    <hr>
 
     <h3>inline-block 확인하기(열 나눔 + 크기 조정O)</h3>
 
@@ -68,20 +70,19 @@
     <div class="area4 block inline-block">4번 영역</div>
     <div class="area5 block inline-block">5번 영역</div>
 
-    <hr />
+
+    <hr>
 
     <h1>화면(요소 영역) 분할</h1>
 
     <h3>상하 2분할</h3>
 
     <div class="container-1">
-      <div class="div1-1 area1"></div>
-      <!-- 3 -->
-      <div class="div1-2 area2"></div>
-      <!-- 7 -->
+        <div class="div1-1 area1"></div> <!-- 3 -->
+        <div class="div1-2 area2"></div> <!-- 7 -->
     </div>
 
-    <hr />
+    <hr>
 
     <h3>상하 3분할</h3>
     <pre>
@@ -95,70 +96,69 @@
     </pre>
 
     <div class="container-2">
-      <div class="area1"></div>
-      <div class="area3"></div>
-      <div class="area5"></div>
+        <div class="area1"></div>
+        <div class="area3"></div>
+        <div class="area5"></div>
     </div>
 
-    <hr />
+    <hr>
 
     <h3>좌우 2분할(50:50)</h3>
 
     <div class="container-3">
-      <div></div>
-      <div></div>
-      <!-- inline / inline-block 속성은 글자라고 생각하면 된다
+        <div></div><div></div>
+        <!-- inline / inline-block 속성은 글자라고 생각하면 된다
             - 글자는 띄어쓰기가 존재함 
             -> 요소 사이 띄어쓰기, 엔터가 존재하면 그대로 인식됨
         -->
     </div>
 
-    <hr />
+
+    <hr>
 
     <div class="container-4">
-      <div class="row">
-        <div class="col area1"></div>
-        <div class="col area2"></div>
-      </div>
-      <div class="row">
-        <div class="col area3"></div>
-        <div class="col area4"></div>
-      </div>
+        <div class="row">
+            <div class="col area1"></div><div class="col area2"></div>
+        </div>
+        <div class="row">
+            <div class="col area3"></div><div class="col area4"></div>
+        </div>
     </div>
 
-    <hr />
+    <hr>
 
     <div class="container-4">
-      <div class="col">
-        <div class="row area1"></div>
-        <div class="row area2"></div>
-      </div>
-      <div class="col">
-        <div class="row area3"></div>
-        <div class="row area4"></div>
-      </div>
+        <div class="col">
+            <div class="row area1"></div>
+            <div class="row area2"></div>
+        </div><div class="col">
+            <div class="row area3"></div>
+            <div class="row area4"></div>
+        </div>
     </div>
 
-    <hr />
+
+    <hr>
 
     <h3>display : none</h3>
-
+    
     <div class="none-test">none 테스트</div>
     <button id="btn">보이기</button>
 
     <script>
-      const btn = document.querySelector('#btn');
-      const noneTest = document.querySelector('.none-test');
+        const btn = document.querySelector('#btn');
+        const noneTest = document.querySelector('.none-test');
 
-      btn.addEventListener('click', () => {
-        if (noneTest.style.display === 'block') {
-          noneTest.style.display = 'none';
-          btn.innerText = '보이기';
-        } else {
-          noneTest.style.display = 'block';
-          btn.innerText = '숨기기';
-        }
-      });
+        btn.addEventListener('click', () => {
+            if(noneTest.style.display === 'block'){
+                noneTest.style.display = "none";
+                btn.innerText = "보이기";
+            }else{
+                noneTest.style.display = "block";
+                btn.innerText = "숨기기";
+            }
+        });
     </script>
-  </body>
+
+</body>
 </html>

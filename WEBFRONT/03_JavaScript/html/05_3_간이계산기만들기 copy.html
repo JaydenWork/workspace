@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05_3_간이계산기만들기</title>
+    <style></style>
+    <script>
+      function calculator(op) {
+        const input1 = Number(document.getElementById('input1').value);
+        const input2 = Number(document.getElementById('input2').value);
+        /* event.target.innerHTML   -->  텍스트를 가져옴*/
+
+        let result;
+
+        switch (op.innerText) {
+          case '+':
+            result = input1 + input2;
+            break;
+          case '-':
+            result = input1 - input2;
+            break;
+          case '*':
+            result = input1 * input2;
+            break;
+          case '/':
+            result = input1 / input2;
+            break;
+          case '%':
+            result = input1 % input2;
+            break;
+        }
+        document.getElementById('result').innerText = result;
+      }
+    </script>
+  </head>
+  <body>
+    두 수를 입력 받아 버튼에 작성된 연산을 수행하는 계산기 만들기
+
+    <hr />
+
+    첫 번째 값 : <input type="text" id="input1" /><br />
+    두 번째 값 : <input type="text" id="input2" /><br />
+
+    <button onclick="calculator(this)">+</button>
+    <button onclick="calculator(this)">-</button>
+    <button onclick="calculator(this)">*</button>
+    <button onclick="calculator(this)">/</button>
+    <button onclick="calculator(this)">%</button>
+
+    <br /><br />
+    계산 결과 : <span id="result"></span>
+
+    <script>
+      // 작성된 html 요소에 원하는 속성(id, class, onclick)을 작성하고
+      // 필요한 js 코드(function)를 이용하여 계산기 만들기
+    </script>
+  </body>
+</html>

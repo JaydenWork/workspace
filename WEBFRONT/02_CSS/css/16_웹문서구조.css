@@ -258,7 +258,7 @@ input[name='saveId'] {
 
 footer {
   height: 200px;
-  background-color: #a3add342;
+  background-color: #ccc;
   display: flex;
   flex-direction: column;
 
