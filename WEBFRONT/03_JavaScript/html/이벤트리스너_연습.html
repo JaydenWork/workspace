@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이벤트리스터 연습</title>
+  </head>
+  <body>
+    <div class="alert-box" id="alert">
+      <p style="width: 150px; height: 100px; background-color: aqua" id="title">
+        Alert 박스
+        <button onclick="openAlert()" id="">x</button>
+    </div>
+      </p>
+
+    <button id="insertId">버튼1</button>
+    <button onclick="insertPw()" id="insertPw">버튼2</button>
+  </body>
+
+  <script>
+    const idBtn = document.getElementById('insertId');
+    const pwBtn = document.getElementById('insertPw');
+
+
+    document.getElementById('title').innerHTML = "이걸로 바꾸기";
+
+   idBtn.addEventListener('click', function(){
+    alert('아이디 입력해주세요');
+   })
+   
+  pwBtn.addEventListener('click', function(){
+    alert('비번을 입력해주세요');
+  })
+
+  pwBtn.addEventListener('click', function(){
+    alert('또 한ㅂ 번');
+  })
+    
+    
+
+  </script>
+</html>
