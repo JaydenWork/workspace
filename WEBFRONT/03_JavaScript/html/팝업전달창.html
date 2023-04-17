@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>팝업창입니다.!!!</h3>
+    <pre>
+  규원 ♥ <input type="text" id="getValueInPopup">
+  소영 ♥ <input type="text" id="sendValueInPopup"><button id="sendValueBtnInPopup">전달하고 창 닫기</button>
+</pre>
+
+    <script>
+      const getValueInPopup = document.getElementById('getValueInPopup');
+      const parentValue = opener.document.getElementById('sendInput');
+      const parentGetValue = opener.document.getElementById('getValue');
+      getValueInPopup.value = parentValue.value;
+
+      document
+        .querySelector('#sendValueBtnInPopup')
+        .addEventListener('click', () => {
+          parentGetValue.value =
+            document.getElementById('sendValueInPopup').value;
+          window.close();
+        });
+    </script>
+  </body>
+</html>

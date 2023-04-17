@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>팝업연습</title>
+  </head>
+  <body>
+    <h1>팝업창으로 값 전달하고 받아오기</h1>
+
+    <pre>
+    규원  ♥ <input type="text" id="sendInput"><button id="sendBtn">전달하기</button><br>
+    소영 ♥ <input type="text" id="getValue">
+  </pre>
+
+    <script>
+      const sendInput = document.getElementById('sendInput');
+      const sendBtn = document.getElementById('sendBtn');
+      const getValue = document.getElementById('getValue');
+
+      sendBtn.addEventListener('click', () => {
+        window.open('팝업전달창.html', '팝업전달창', 'width=800, height= 400');
+      });
+    </script>
+  </body>
+</html>
