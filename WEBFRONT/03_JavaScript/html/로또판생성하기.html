@@ -40,33 +40,32 @@
     <div id="lottoBoard"></div>
 
     <script>
-            const createBtn = document.getElementById('createBtn');
-            const lottoBoard = document.getElementById('lottoBoard');
+      const createBtn = document.getElementById('createBtn');
+      const lottoBoard = document.getElementById('lottoBoard');
 
-            createBtn.addEventListener('click', () => {
-              lottoBoard.innerHTML = '';
-              for (var i = 1; i <= 45; i++) {
-                const p = document.createElement('p');
-                p.classList.add('number');
-                p.innerText = i;
-                lottoBoard.appendChild(p);
-                p.addEventListener('click', (e) => {
-                  if (e.target.classList.contains('active')) {
-                    e.target.classList.toggle('active');
-                  } else {
-                    if (document.getElementsByClassName('active').length >= 6) {
-                      alert('경고');
-                      return;
-                    }
-                    e.target.classList.toggle('active');
-                  }
-                });
+      createBtn.addEventListener('click', () => {
+        lottoBoard.innerHTML = '';
+        for (var i = 1; i <= 45; i++) {
+          const p = document.createElement('p');
+          p.classList.add('number');
+          p.innerText = i;
+          lottoBoard.appendChild(p);
+          p.addEventListener('click', (e) => {
+            if (e.target.classList.contains('active')) {
+              e.target.classList.toggle('active');
+            } else {
+              if (document.getElementsByClassName('active').length >= 6) {
+                alert('경고');
+                return;
               }
-            });
+              e.target.classList.toggle('active');
+            }
+          });
+        }
+      });
 
-          //   for(let active of document.getElementsByClassName('active')){
-          // console.log(active.innerText); 뽑은 숫자 콘솔에 출력
-      }
+      //   for(let active of document.getElementsByClassName('active')){
+      // console.log(active.innerText); 뽑은 숫자 콘솔에 출력
     </script>
   </body>
 </html>
