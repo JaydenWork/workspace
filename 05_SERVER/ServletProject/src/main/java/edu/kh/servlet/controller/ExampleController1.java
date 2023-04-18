@@ -44,6 +44,8 @@ public class ExampleController1 extends HttpServlet {
 		System.out.println(getRemoteAddr(req));
 		System.out.println("입력 받은 이름 : " + name);
 		System.out.println("입력 받은 나이 : " + age);
+		System.out.println("입력 받은 나이 : " + age);
+		System.out.println("입력 받은 나이 : " + age);
 		
 		
 		// 서버 -> 클라이언트 응답하기
