@@ -23,7 +23,7 @@ public class TestController extends HttpServlet{
 		
 		//webapp 폴더를 기준으로 위임할 JSP 경로 작성
 		RequestDispatcher dispatcher
-		= req.getRequestDispatcher("/WEB-INF/views/testResult.jsp");
+		= req.getRequestDispatcher("/WEBx-INF/views/testResult.jsp");
 		
 		dispatcher.forward(req, resp);
 	}

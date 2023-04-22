@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* 왼쪽 패널 */
+.left-panel {
+  width: 210px;
+  background-color: lightgray;
+  margin-left: -10px;
+  margin-top: 60px;
+  min-width: 210px;
+  position: relative; /* 상대적인 위치 지정 */
+  margin-top: 52px;
+  z-index: 2; /* .header의 위에 배치 */
+  flex-direction: column;
+}
+
+/* 오른쪽 패널 */
+.right-panel {
+  flex-grow: 1;
+  overflow-y: auto; /* 스크롤 가능하게 설정 */
+  padding: 20px;
+}
+
+/* 헤더 */
+.header {
+  height: 60px;
+  background-color: gray;
+  position: fixed; /* 고정 위치 */
+  top: 0; /* 상단에 고정 */
+  left: 0;
+  right: 0; /* 오른쪽 끝에 고정 */
+  z-index: 1; /* 다른 요소들 위에 배치 */
+}
+
+/* 헤더 내용 */
+.header-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+}
+
+/* 본문 내용 */
+.content {
+  margin-top: 60px; /* 헤더의 높이만큼 여백 추가 */
+}
+
+/* 본문 내용 예시 스타일 */
+.content p {
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  width: 210px;
+  background: #555555;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  color: white;
+}
+
+li a {
+  text-decoration: none;
+  padding: 20px;
+  display: block;
+  color: white;
+  padding-left: 30px;
+}
+
+li a:hover {
+  background: #2db400;
+  color: #fff;
+}
+
+li a.home {
+  color: #fff;
+  font-weight: bold;
+}
+#menu-wrap {
+  border-bottom: 2px solid black;
+}

@@ -73,7 +73,7 @@
   height: 300px;
 }
 .margin-auto {
-  margin: 100px auto;
+  margin: 10px auto;
 
   /* margin : auto
       -> 다른 요소와의 간격을 자동으로 계산해서

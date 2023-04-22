@@ -65,11 +65,10 @@ function accessName() {
 
 // tag로 접근하기
 function accessTagName() {
-  var arr = document.getElementsByTagName('li');
+  var li = document.getElementsByTagName('li');
 
-  // 각 li 요소에 작성된 색으로 글자색 변경
-  for (var i = 0; i < arr.length; i++) {
-    arr[i].style.color = arr[i].innerText;
+  for (var i = 0; i < li.length; i++) {
+    li[i].style.backgroundColor = li[i].innerText;
   }
 }
 
