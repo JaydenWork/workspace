@@ -7,83 +7,82 @@ const menuMember = document.getElementById('menu-member');
 const removeHover = document.getElementsByClassName('remove-hover');
 const langDropDown = document.getElementById('menu-lang-drop-down');
 const langList = document.getElementsByClassName('lang');
+const menuList = document.getElementsByClassName('menuList');
+const korean = document.getElementById('korean');
+const english = document.getElementById('english');
+const chinese = document.getElementById('chinese');
+const japanese = document.getElementById('japanese');
+// const menuLabelsEnglish = ['Member management', 'LogOut'];
+// const menuLabelsKorean = ['회원관리', '로그아웃'];
+// const menuLabelsJapanese = ['会員管理', 'ログアウト'];
+// const menuLabelsChinese = ['会员管理', '退出'];
+const menuLabels = {
+  English: ['Member management', 'LogOut'],
+  Korean: ['회원관리', '로그아웃'],
+  Japanese: ['会員管理', 'ログアウト'],
+  Chinese: ['会员管理', '退出'],
+};
 
 voteLogo.addEventListener('click', () => {
   window.location.href = '../html/main_login.html';
 });
 
 menuMember.addEventListener('click', function () {
-  // '../html/adming_member.html'로 페이지 이동
   window.location.href = '../html/admin_member.html';
 });
 
-function dp_menu() {
-  let click = document.getElementById('drop-content');
-  if (click.style.display === 'none') {
-    click.style.display = 'block';
+const menu = document.querySelector('.menu');
+const subBar = document.querySelector('.menu > .sub');
+
+let subToggle = true;
+
+function swapLanguages(lang1, lang2) {
+  const tempText = langList[lang1].childNodes[2].textContent;
+  const tempId = langList[lang1].id;
+  langList[lang1].childNodes[2].textContent =
+    langList[lang2].childNodes[2].textContent;
+  langList[lang1].id = langList[lang2].id;
+  langList[lang2].childNodes[2].textContent = tempText;
+  langList[lang2].id = tempId;
+}
+
+function show_sub() {
+  if (subToggle) {
+    subBar.style.height = '160px';
+    subToggle = !subToggle;
   } else {
-    click.style.display = 'none';
+    subBar.style.height = '0px';
+    subToggle = !subToggle;
   }
 }
+menu.querySelector(':first-child').addEventListener('click', show_sub);
 
-function toggleDropdown() {
-  var dropdownMenu = document.getElementById('dropdownMenu');
-  dropdownMenu.classList.toggle('active'); // 'dropdown-menu'에 'active' 클래스를 토글하여 드롭 다운 메뉴의 보여짐/숨김 상태를 제어
+for (let i = 1; i < langList.length; i++) {
+  langList[i].addEventListener('click', function () {
+    swapLanguages(0, i);
+
+    subBar.style.height = '0px';
+    subToggle = !subToggle;
+  });
 }
 
-function handleMenuItemClick(menuItemIndex) {
-  var menuItemText =
-    document.getElementById('dropdownMenu').children[menuItemIndex - 1]
-      .textContent;
-  alert('메뉴 ' + menuItemIndex + '가 클릭되었습니다: ' + menuItemText);
+function changeImageSrc(imgElement, newSrc) {
+  imgElement.src = newSrc;
 }
 
-for (var i = 0; i < removeHover.length; i++) {
-  removeHover[i].style.backgroundColor = '#555555';
-  removeHover[i].style.color = '#555555';
-}
+// hover 이벤트에 대한 처리
+const menuItems = document.querySelectorAll('.menu > .sub li');
 
-let isClicked = false;
-langDropDown.addEventListener('click', () => {
-  const languages = ['English', '日本語', '中文'];
-  for (let i = 0; i < removeHover.length; i++) {
-    if (!isClicked) {
-      removeHover[i].style.fontWeight = 'bold';
-      removeHover[i].style.backgroundColor = 'white';
-      removeHover[i].innerText = languages[i];
+menuItems.forEach((menuItem) => {
+  const imgElement = menuItem.querySelector('.menu-icon');
+  const originalSrc = imgElement.src;
+  const hoverSrc = originalSrc.replace('black', 'white'); // 이미지 파일명에 따라 수정
 
-      removeHover[i].style.transition =
-        'background-color 0.3s ease, color 0.5s ease';
-      removeHover[i].classList.add('hover-effect');
+  menuItem.addEventListener('mouseover', () => {
+    changeImageSrc(imgElement, hoverSrc);
+  });
 
-      removeHover[i].addEventListener('mouseover', () => {
-        removeHover[i].style.backgroundColor = '#03c75a';
-        removeHover[i].style.color = 'white';
-      });
-
-      const mouseoutHandler = () => {
-        removeHover[i].style.backgroundColor = 'white';
-        removeHover[i].style.color = 'black';
-      };
-      removeHover[i].addEventListener('mouseout', mouseoutHandler);
-      removeHover[i].mouseoutHandler = mouseoutHandler;
-    } else {
-      removeHover[i].style.backgroundColor = '#555555';
-      removeHover[i].style.color = '#555555';
-      removeHover[i].style.transition = '';
-
-      removeHover[i].classList.remove('hover-effect');
-
-      removeHover[i].removeEventListener(
-        'mouseout',
-        removeHover[i].mouseoutHandler
-      );
-
-      removeHover[i].removeEventListener('mouseover', () => {
-        removeHover[i].style.backgroundColor = '#03c75a';
-        removeHover[i].style.color = 'white';
-      });
-    }
-  }
-  isClicked = !isClicked;
+  menuItem.addEventListener('mouseout', () => {
+    changeImageSrc(imgElement, originalSrc);
+  });
 });

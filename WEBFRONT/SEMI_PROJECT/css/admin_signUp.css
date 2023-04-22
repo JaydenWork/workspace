@@ -108,23 +108,35 @@ body {
   font-size: larger;
   padding: 5px;
 }
-#menu-lang-drop-down {
-  background-color: #333;
-}
-#menu-lang-drop-down:hover {
-  background-color: #3fb0b0;
-}
-#remove:hover {
-  background-color: #555555;
-}
-#menu-lang-drop-down,
-.lang {
+/* .lang {
   text-align: center;
+} */
+.menu > .sub {
+  height: 0;
+  list-style: none;
+  overflow: hidden;
+  transition: height ease-out 1s 0s;
 }
 
-.hover-effect:hover {
-  background-color: #03c75a;
+.menu > .sub li {
+  background-color: rgb(212, 209, 209);
+  border-top: 1px white solid;
+  font-weight: bold;
+  cursor: pointer;
 }
+.menu > .sub li:hover {
+  background-color: #2db400;
+  color: #ffffff; /* 글자색을 하얀색(#ffffff)으로 설정 */
+}
+
+.menu > .sub li {
+  text-decoration: none;
+  color: #333;
+}
+.mainLang {
+  background-color: #333;
+}
+
 /* ---------------------------------------------------------------------------- */
 
 body {

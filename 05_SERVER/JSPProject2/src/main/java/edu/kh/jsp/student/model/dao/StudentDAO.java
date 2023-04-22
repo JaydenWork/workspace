@@ -80,7 +80,8 @@ public class StudentDAO {
 			return stdList;
 		}
 		
-	
+	//  try(ResultSet rs=conn.createStatement().excuteQuery(prop.getProperty("selectAll"))){
+	// while(rs.next()) 
 	
 
 }
