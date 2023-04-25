@@ -6,7 +6,7 @@ body {
 }
 
 /* 헤더 스타일 */
-.header {
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -57,9 +57,10 @@ body {
   color: white;
   font-size: 15px;
 }
-.left-panel li:hover {
+
+/* .left-panel li:hover {
   background-color: #2db400;
-}
+} */
 
 #menu-wrap1 {
   list-style-type: none;
@@ -125,7 +126,7 @@ body {
   cursor: pointer;
 }
 .menu > .sub li:hover {
-  background-color: #2db400;
+  background-color: #6a866c;
   color: #ffffff; /* 글자색을 하얀색(#ffffff)으로 설정 */
 }
 
@@ -135,6 +136,8 @@ body {
 }
 .mainLang {
   background-color: #333;
+  color: darkblue# !important;
+  font-weight: bold;
 }
 
 /* ---------------------------------------------------------------------------- */

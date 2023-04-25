@@ -1,0 +1,88 @@
+const signupId = document.getElementById('signup-id');
+const signupPw = document.getElementById('signup-pw');
+const signupPww = document.getElementById('signup-pww');
+const idBtn = document.getElementById('id-btn');
+const voteLogo = document.getElementById('voteLogo');
+const menuMember = document.getElementById('menu-member');
+const removeHover = document.getElementsByClassName('remove-hover');
+const langDropDown = document.getElementById('menu-lang-drop-down');
+const langList = document.getElementsByClassName('lang');
+const menuList = document.getElementsByClassName('menuList');
+const korean = document.getElementById('korean');
+const english = document.getElementById('english');
+const chinese = document.getElementById('chinese');
+const japanese = document.getElementById('japanese');
+// const menuLabelsEnglish = ['Member management', 'LogOut'];
+// const menuLabelsKorean = ['회원관리', '로그아웃'];
+// const menuLabelsJapanese = ['会員管理', 'ログアウト'];
+// const menuLabelsChinese = ['会员管理', '退出'];
+const menuLabels = {
+  English: ['Member management', 'LogOut'],
+  Korean: ['회원관리', '로그아웃'],
+  Japanese: ['会員管理', 'ログアウト'],
+  Chinese: ['会员管理', '退出'],
+};
+
+voteLogo.addEventListener('click', () => {
+  window.location.href = '../html/main_login.html';
+});
+
+menuMember.addEventListener('click', function () {
+  window.location.href = '../html/admin_member.html';
+});
+
+const menu = document.querySelector('.menu');
+const subBar = document.querySelector('.menu > .sub');
+
+let subToggle = true;
+
+function swapLanguages(lang1, lang2) {
+  const tempText = langList[lang1].childNodes[2].textContent;
+  const tempId = langList[lang1].id;
+  langList[lang1].childNodes[2].textContent =
+    langList[lang2].childNodes[2].textContent;
+  langList[lang1].id = langList[lang2].id;
+  langList[lang2].childNodes[2].textContent = tempText;
+  langList[lang2].id = tempId;
+}
+
+function show_sub() {
+  if (subToggle) {
+    subBar.style.height = '160px';
+    subToggle = !subToggle;
+  } else {
+    subBar.style.height = '0px';
+    subToggle = !subToggle;
+  }
+}
+menu.querySelector(':first-child').addEventListener('click', show_sub);
+
+for (let i = 1; i < langList.length; i++) {
+  langList[i].addEventListener('click', function () {
+    swapLanguages(0, i);
+
+    subBar.style.height = '0px';
+    subToggle = !subToggle;
+  });
+}
+
+function changeImageSrc(imgElement, newSrc) {
+  imgElement.src = newSrc;
+}
+
+// hover 이벤트에 대한 처리
+const menuItems = document.querySelectorAll('.menu > .sub li');
+
+menuItems.forEach((menuItem) => {
+  const imgElement = menuItem.querySelector('.menu-icon');
+  const originalSrc = imgElement.src;
+  const hoverSrc = originalSrc.replace('black', 'white'); // 이미지 파일명에 따라 수정
+
+  menuItem.addEventListener('mouseover', () => {
+    changeImageSrc(imgElement, hoverSrc);
+  });
+
+  menuItem.addEventListener('mouseout', () => {
+    changeImageSrc(imgElement, originalSrc);
+  });
+});
