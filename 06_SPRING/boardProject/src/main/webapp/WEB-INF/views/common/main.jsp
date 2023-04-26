@@ -54,11 +54,11 @@
                     <section>
                       <input
                         type="text"
-                        name="inputEmail"
+                        name="memberEmail"
                         placeholder="이메일"
                         autocomplete="off"
                       />
-                      <input type="password" name="inputPw" placeholder="비밀번호" />
+                      <input type="password" name="memberPw" placeholder="비밀번호" />
                     </section>
                     <section>
                       <button>로그인</button>

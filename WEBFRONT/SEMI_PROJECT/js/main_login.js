@@ -1,5 +1,5 @@
 function openSignUpAdmin() {
-  window.open('../html/admin_signUp.html', '_blank');
+  window.open('../html/test.html', '_blank');
 }
 
 const loginId = document.getElementById('id');

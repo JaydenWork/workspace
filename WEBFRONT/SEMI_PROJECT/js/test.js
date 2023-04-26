@@ -2,7 +2,6 @@ const signupId = document.getElementById('signup-id');
 const signupPw = document.getElementById('signup-pw');
 const signupPww = document.getElementById('signup-pww');
 const idBtn = document.getElementById('id-btn');
-const voteLogo = document.getElementById('voteLogo');
 const menuMember = document.getElementById('menu-member');
 const removeHover = document.getElementsByClassName('remove-hover');
 const langDropDown = document.getElementById('menu-lang-drop-down');
@@ -12,6 +11,7 @@ const korean = document.getElementById('korean');
 const english = document.getElementById('english');
 const chinese = document.getElementById('chinese');
 const japanese = document.getElementById('japanese');
+const voteLogo = document.getElementById('vote_logo');
 // const menuLabelsEnglish = ['Member management', 'LogOut'];
 // const menuLabelsKorean = ['회원관리', '로그아웃'];
 // const menuLabelsJapanese = ['会員管理', 'ログアウト'];
@@ -25,10 +25,6 @@ const menuLabels = {
 
 voteLogo.addEventListener('click', () => {
   window.location.href = '../html/main_login.html';
-});
-
-menuMember.addEventListener('click', function () {
-  window.location.href = '../html/admin_member.html';
 });
 
 const menu = document.querySelector('.menu');
@@ -85,4 +81,29 @@ menuItems.forEach((menuItem) => {
   menuItem.addEventListener('mouseout', () => {
     changeImageSrc(imgElement, originalSrc);
   });
+});
+
+const userIcon = document.querySelector('.fa-user');
+const bellIcon = document.querySelector('.fa-bell');
+const commentIcon = document.querySelector('.fa-comment');
+
+userIcon.addEventListener('mouseover', () => {
+  userIcon.style.color = '#2db400';
+});
+userIcon.addEventListener('mouseout', () => {
+  userIcon.style.color = 'white';
+});
+
+bellIcon.addEventListener('mouseover', () => {
+  bellIcon.style.color = '#2db400';
+});
+bellIcon.addEventListener('mouseout', () => {
+  bellIcon.style.color = 'white';
+});
+
+commentIcon.addEventListener('mouseover', () => {
+  commentIcon.style.color = '#2db400';
+});
+commentIcon.addEventListener('mouseout', () => {
+  commentIcon.style.color = 'white';
 });

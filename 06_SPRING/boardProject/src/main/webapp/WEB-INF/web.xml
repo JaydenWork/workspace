@@ -3,6 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://JAVA.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_4_0.xsd">
 
+
+	<!-- web.xml ( 배포 서술자/설명서)
+		서버가 켜질 때 (배포가 시작될 때 ) 가장 먼저 읽어들이는 설정 파일
+		 -->
+		 
+		 <!-- root-context.xml
+		 	  서버가 켜질 때 web.xml이 가장먼저 읽어들이는 설정 파일
+		 	  프로젝트 전반적으로 사용될 설정, 객체(Bean)를  -->
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
@@ -14,7 +22,18 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+
 	<!-- Processes application requests -->
+	
+	<!-- DispatcherServlet Context : d -->
+	<!-- 
+		DispatcherServlet 생성 시 필요한 내용을 정의하는 파일
+		HandlerMapping : 어떤 요청을 어떤 클래스/매서드로 연결하는지 제어하는 객체,
+		ViewResolver, 
+		Component-scan, 
+		트랜잭션 관린, 
+		웹소켓, 인터셉터, 
+		스케줄 -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

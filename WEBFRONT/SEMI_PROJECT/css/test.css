@@ -6,8 +6,25 @@ a {
   text-decoration: none;
   color: white;
 }
+.navbar_logo {
+  width: 25%;
+}
+.navbar_menu {
+  width: 50%;
+}
+.navbar_links {
+  width: 25%;
+  margin: 5px;
+  position: relative;
+}
+#admin {
+  margin-top: 10px;
+  margin-left: 10px;
+}
 
 .navbar {
+  position: fixed;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,9 +35,11 @@ a {
 .navbar_logo {
   font-size: 24px;
   color: white;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
 }
-
-.navbar_logo i {
+.nave .navbar_logo i {
   color: #03c75a;
 }
 
@@ -36,4 +55,187 @@ a {
 
 .navbar_icons {
   list-style: none;
+  display: flex;
 }
+.navbar_icons li {
+  padding: 8px 10px;
+  width: 10px;
+}
+
+@media screen and (max-width: 768px) {
+}
+
+#vote_logo {
+  height: 50px;
+  cursor: pointer;
+}
+.left {
+  position: fixed;
+  top: 66px;
+  left: 0;
+  width: 210px;
+  height: auto;
+  overflow-y: scroll;
+  bottom: 0;
+  background-color: #555555;
+}
+.right {
+  position: fixed;
+  width: auto;
+}
+
+/* 오른쪽 패널 스타일 */
+
+/* 페이지 내용 스타일 */
+.content {
+  padding: 20px;
+  width: 60%;
+}
+.left-panel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-panel li {
+  padding: 11px;
+
+  margin: 0;
+  color: white;
+  font-size: 15px;
+}
+#menu1,
+#menu2,
+#menu3 {
+  font-size: 15px;
+  margin-top: 8px;
+  font-weight: bold;
+  color: lightgrey;
+}
+.left-panel li:hover {
+  background-color: #2db400;
+}
+#menu1:hover,
+#menu2:hover,
+#menu3:hover,
+#remove1:hover,
+#remove2:hover {
+  background-color: inherit;
+}
+.mainLang:hover {
+  background-color: #333 !important;
+}
+
+#menu-wrap1 {
+  list-style-type: none;
+}
+#menu-wrap1 ul li img.menu-icon {
+  float: left;
+  margin-right: 8px;
+  width: 16px;
+}
+#remove1 {
+  padding: 8px;
+}
+#remove2 {
+  padding: 8px;
+}
+
+.header-img {
+  margin-right: 10px;
+
+  height: 50px;
+  width: auto;
+  margin-left: 15px;
+}
+.header-admin {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+#logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+#admin-profile-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid rgb(66, 65, 65);
+  padding-bottom: 5px;
+  height: 140px;
+}
+#admin-img {
+  width: 75px;
+  margin: 20px 0;
+  flex-direction: column;
+}
+
+#admin-profile-image div {
+  color: white !important;
+  margin-top: -10px;
+  font-size: larger;
+  padding: 5px;
+}
+/* .lang {
+  text-align: center;
+} */
+.menu > .sub {
+  height: 0;
+  list-style: none;
+  overflow: hidden;
+  transition: height ease-out 1s 0s;
+}
+
+.menu > .sub li {
+  background-color: rgb(212, 209, 209);
+  border-top: 1px white solid;
+  font-weight: bold;
+  cursor: pointer;
+}
+.menu > .sub li:hover {
+  background-color: #6a866c;
+  color: #ffffff; /* 글자색을 하얀색(#ffffff)으로 설정 */
+}
+
+.menu > .sub li {
+  text-decoration: none;
+  color: #333;
+}
+.mainLang {
+  background-color: #333;
+  color: #089eda !important;
+  font-weight: bold;
+}
+
+.head-menu {
+  font-size: 18px;
+}
+
+.fa-solid:active {
+  box-shadow: 0;
+  position: relative;
+  top: 2px;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  margin-top: 100px;
+  position: fixed;
+}
+
+.box {
+  width: 200px;
+  height: 50px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  border: 1px solid black;
+}
+
+.container

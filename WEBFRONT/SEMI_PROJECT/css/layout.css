@@ -1,0 +1,33 @@
+article {
+  color: #fff;
+  height: 100vh; /* 높이를 100vh로 설정하여 화면을 꽉 채움 */
+  width: 100%; /* 너비를 100%로 설정하여 화면을 꽉 채움 */
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav    main'
+    'nav    footer';
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 80px 1fr 50px;
+}
+
+header {
+  background: #333;
+  grid-area: header;
+}
+
+nav {
+  background: #555555;
+  grid-area: nav;
+}
+
+main {
+  background: lightgray;
+  grid-area: main;
+}
+
+footer {
+  background: #24c0a5;
+  grid-area: footer;
+  display: none;
+}
