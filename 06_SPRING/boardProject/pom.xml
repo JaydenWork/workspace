@@ -30,11 +30,11 @@
    
    <!--오라클 JDBC 드라이버 -->
    	<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc11 -->
-<dependency>
-    <groupId>com.oracle.database.jdbc</groupId>
-    <artifactId>ojdbc11</artifactId>
-    <version>21.5.0.0</version>
-</dependency>
+	  <dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc11</artifactId>
+		    <version>21.5.0.0</version>
+	  </dependency>
    	
    		
    		      <!-- 스프링에서 JDBC를 사용할 수 있게 하는 라이브러리 -->
@@ -70,7 +70,31 @@
           <version>2.9.0</version>
       </dependency>
    		
-   		
+   
+   		      <!-- Spring-security -->
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-core</artifactId>
+          <version>5.7.1</version>
+      </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-web</artifactId>
+          <version>5.7.1</version>
+      </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-config</artifactId>
+          <version>5.7.1</version>
+      </dependency>	
+   
+   
+   
    
       <!-- Spring 모듈 -->
       <dependency>

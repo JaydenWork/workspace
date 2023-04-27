@@ -4,7 +4,7 @@
  <header>
         <section>
           <!-- 클릭 시 메인 페이지로 이동하는 로고 -->
-          <a href="#"></a>
+          <a href="/"></a>
           <img src="/resources/images/순덕.png" alt="로고" id="homeLogo" />
         </section>
         <section>
@@ -15,7 +15,7 @@
                  - Get : input태그 값을 주소에 담아서 제출(주소에 보임)
                  - POST : input태그 값을 주소에 담지 않고 제출(주소에 보이지 않음)
                           -> HTTP Body에 담아서 제출-->
-            <form action="#" method="GET"></form>
+            <form action="#" method="GET">
             <fieldset>
               <!-- form 태그 내 영역 구분 -->
               <!--
@@ -37,9 +37,50 @@
                 class="fa-solid fa-magnifying-glass"
               ></button>
             </fieldset>
+            </form>
           </article>
         </section>
+
+
+
         <section></section>
+
+        <%-- 우측 상단 드롭다운 메뉴 --%>
+        <div class="header-top-menu">
+
+        <c:choose>
+            <c:when test="${empty loginMember}">
+            <%-- 로그인 --%>
+            <a href="/">메인 페이지</a> | <a href="/member/login">로그인</a>
+            </c:when>
+            <c:otherwise>
+               <label for="headerMenuToggle">
+              ${loginMember.memberNickname}<i class='fa-solid fa-caret-down'></i>
+          </label>
+          <input type="checkbox" id="headerMenuToggle">
+          <div class="header-menu">
+          <a href="">내정보</a>
+          <a href="">로그아웃</a>
+          </div>
+            </c:otherwise>
+
+        
+        </c:choose>
+
+          <%-- 로그인 x --%>
+          <%-- <a href="/">메인 페이지</a> | <a href="/member/login">로그인</a> --%>
+
+          <%-- 로그인 o --%>
+          <%-- <label for="headerMenuToggle">
+              ${loginMember.memberNickname}<i class='fa-solid fa-caret-down'></i>
+          </label> --%>
+
+          
+
+        </div>
+
+
+
       </header>
 
       <nav>
