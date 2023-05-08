@@ -153,7 +153,7 @@ public class MemberController {
 						) {
 		
 		
-		System.out.println(saveId);
+//		System.out.println(saveId);
 		
 		// Member inputMember : 커맨드 객체(필드에 파라미터 담겨있음)
 		
@@ -180,7 +180,8 @@ public class MemberController {
 		// 로그인 서비스 호출
 		Member loginMember = service.login(inputMember);
 		
-		//System.out.println(loginMember);
+		System.out.println(loginMember);
+		
 		
 		//로그인 결과에 따라 리다이렉트 경로를 다르게 지정
 		String path = "redirect:";
