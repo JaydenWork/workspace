@@ -1,7 +1,5 @@
 package edu.kh.project.board.model.dto;
 
-import java.util.List;
-
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +8,6 @@ import lombok.ToString;
 @Setter
 @ToString
 public class Comment {
-
     private int commentNo;
     private String commentContent;
     private String commentCreateDate;
@@ -20,5 +17,4 @@ public class Comment {
     private int parentNo;
     private String memberNickname;
     private String profileImage;
-
 }

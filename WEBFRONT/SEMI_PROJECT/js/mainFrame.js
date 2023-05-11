@@ -8,6 +8,11 @@ const newsId = document.querySelector('#main-news-id');
 const newsCountry = document.querySelector('#main-news-country');
 const viewers = document.querySelector('#view');
 const mainPhoto = document.querySelector('#mainPhoto');
+const container = document.querySelector('.container');
+const containerAfter = document.querySelector('.container::after');
+const container2 = document.querySelector('.container2');
+const container3 = document.querySelector('.container3');
+const black = document.querySelector('#black');
 
 const pettitions = [
   {
@@ -224,4 +229,20 @@ function loadItems() {
   idx += inc;
 }
 
-button.addEventListener('click', loadItems);
+const darkMode = document.getElementById('blackModeBtn');
+darkMode.addEventListener('click', () => {
+  const elements = document.getElementsByTagName('*');
+  container2.style.backgroundColor = '#222';
+  container3.style.backgroundColor = '#222';
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.color = 'white';
+    elements[i].style.backgroundColor = '#222';
+    black.childNodes.style.backgroundColor = 'white';
+
+    // black.style.backgroundColor = none;
+    // black.style.backgroundColor = none;
+    // containerAfter.style.zIndex = 100;
+    // container2.style.backgroundColor = '#222';
+    // container3.style.backgroundColor = '#222';
+  }
+});

@@ -173,3 +173,19 @@ div a {
   margin-left: 1080px;
   font-size: 30px;
 } */
+
+#blackModeBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  width: 150px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 20px;
+  border-color: white;
+  border-shadow: 2px 3px 5px 0px lightgray;
+}
+#blackModeBtn:hover {
+  background-color: #333;
+  color: white;
+}
