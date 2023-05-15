@@ -1,10 +1,10 @@
 ALTER SESSION SET "_ORACLE_SCRIPT" = TRUE;
 
 --사용자 계정 생성
-CREATE USER kh_kkw IDENTIFIED BY "oracle_kkw123A";
+CREATE USER nojo_vote IDENTIFIED BY "nojo_vote123A";
 
 --사용자 계정에 권한 부여
-GRANT RESOURCE, CONNECT TO kh_kkw;
+GRANT RESOURCE, CONNECT TO nojo_vote;
 
 --객체가 생성될 수 있는 공간 할당량 지정
 ALTER USER kh_kkw DEFAULT TABLESPACE SYSTEM QUOTA UNLIMITED ON SYSTEM;

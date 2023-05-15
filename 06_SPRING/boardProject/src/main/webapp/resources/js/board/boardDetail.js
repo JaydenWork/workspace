@@ -51,3 +51,22 @@ boardLike.addEventListener('click', (e) => {
       console.log(err);
     });
 });
+
+//게시글 수정 버튼 클릭 시
+document.getElementById('updateBtn').addEventListener('click', () => {
+  location.href =
+    location.pathname.replace('board', 'board2') + '/update' + location.search;
+
+  // /board2/1/2006/update?cp=1 (GET) 방식 요청
+});
+
+// 게시글 삭제 버튼이 클릭 되었을 때
+document.getElementById('deleteBtn').addEventListener('click', () => {
+  if (confirm('Are you sure you want to delete')) {
+    location.href = location.pathname.replace('board', 'board2') + '/delete';
+    // /board2/1/2006/delete (GET) 방식 요청
+
+    // 삭제 서비스 호출 성공 시 redirect:/board/{boardCode}
+    // + RedirectAttributes 이용해서 "삭제 되었습니다" alert 출력
+  }
+});

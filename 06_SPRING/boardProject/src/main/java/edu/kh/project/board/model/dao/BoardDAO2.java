@@ -1,6 +1,7 @@
 package edu.kh.project.board.model.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +35,49 @@ public class BoardDAO2 {
 	 * */
 	public int insertImageList(List<BoardImage> uploadList) {
 		return sqlSession.insert("boardMapper.insertImageList", uploadList);
+	}
+
+
+	/**게시글 수정
+	 * @param board
+	 * @return rowCount
+	 * */
+	public int boardUpdate(Board board) {
+		// TODO Auto-generated method stub
+		return sqlSession.update("boardMapper.boardUpdate",board);
+	}
+
+
+	
+	/**이미지 삭제
+	 * 
+	 * */
+	public int imageDelete(Map<String, Object> deleteMap) {
+		return sqlSession.delete("boardMapper.imageDelete", deleteMap);
+	}
+
+	/**이미지 수정
+	 * 
+	 * */
+	public int imageUpdate(BoardImage img) {
+		return sqlSession.update("boardMapper.imageUpdate", img);
+	}
+
+
+	/**이미지 삽입
+	 * 
+	 * */
+	public int imageInsert(BoardImage img) {
+		// TODO Auto-generated method stub
+		return sqlSession.insert("boardMapper.imgeInsert", img);
+	}
+
+	
+	/**게시글 삭제
+	 * 
+	 * 
+	 * */
+	public int boardDelete(Map map) {
+		return sqlSession.update("boardMapper.boardDelete", map);
 	}
 }

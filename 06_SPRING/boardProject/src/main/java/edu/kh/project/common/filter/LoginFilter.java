@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
 //				지정된 주소로 요청이 올 때 마다 동작
 
 @WebFilter(filterName = "loginFilter",
-			urlPatterns = {"/myPage/*"}) // 못 들어가게 하고 싶은 곳 주소 추가하면 된다.
+			urlPatterns = {"/myPage/*", "/board2/*"}) // 못 들어가게 하고 싶은 곳 주소 추가하면 된다.
 public class LoginFilter implements Filter {
 
   
