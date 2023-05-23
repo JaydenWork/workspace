@@ -172,6 +172,10 @@
         -> 1회 출력 후 session에서 message 삭제
    --%>
     
+    <%-- sockJS 추가 --%>
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+
+
     <%-- main.js 추가 --%>
     <script src="/resources/js/main.js"></script>
 

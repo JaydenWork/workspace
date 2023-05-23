@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author welle
- *
- */
-module backjun {
-}

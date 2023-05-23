@@ -6,6 +6,9 @@
       src="https://kit.fontawesome.com/f7459b8054.js"
       crossorigin="anonymous"
     ></script>
+  <script src="/resources/js/header.js"></script>
+
+
  <header>
         <section>
           <!-- 클릭 시 메인 페이지로 이동하는 로고 -->
@@ -15,12 +18,15 @@
         <section>
           <!-- 검색어 입력할 수 있는 요소 배치 -->
           <article class="search-area">
+
+
+
             <!-- action : 내부 input에 작성된 값을 제출할 경로/주소 
                  method : 어떤 방식으로 제출할지 지정
                  - Get : input태그 값을 주소에 담아서 제출(주소에 보임)
                  - POST : input태그 값을 주소에 담지 않고 제출(주소에 보이지 않음)
                           -> HTTP Body에 담아서 제출-->
-            <form action="#" method="GET">
+            <form action="/board/1" method="GET">
             <fieldset>
               <!-- form 태그 내 영역 구분 -->
               <!--
@@ -32,8 +38,11 @@
                 name="query"
                 id="query"
                 placeholder="검색어를 입력해주세요."
-                autocomplete="off"
+                autocomplete="off" value="${param.query}"
               />
+
+              <%-- 제목 검색 --%>
+              <input type="hidden" name="key" value="t">
 
               <!-- 검색 버튼 -->
               <!-- button type="submit" 이 기본값 -->
@@ -43,6 +52,7 @@
               ></button>
             </fieldset>
             </form>
+          <ul id="searchResult" class="close"></ul>
           </article>
         </section>
 
@@ -106,3 +116,7 @@
 
         </ul>
     </nav>
+
+    <c:if test="${not empty loginMember}" >
+            <li><a href="/chatting">채팅</a></li>
+        </c:if>

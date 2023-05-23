@@ -105,9 +105,39 @@ public class BoardDAO {
 	 * @return result
 	 */
 	public int updateReadCount(int boardNo) {
-		// TODO Auto-generated method stub
 		return sqlSession.update("boardMapper.updateReadCount", boardNo);
 	}
-	
-	
+
+	/**게시글 수 조회(검색)
+	 * @param paramMap
+	 * @return listCount
+	 * */
+	public int getListCount(Map<String, Object> paramMap) {
+		return sqlSession.selectOne("boardMapper.getListCount_search", paramMap);
+	}
+
+
+	public List<Board> selectBoardList(Pagination pagination, Map<String, Object> paramMap) {
+		
+		int offset = (pagination.getCurrentPage() - 1)
+				* pagination.getLimit();
+		
+		RowBounds rowBounds = new RowBounds(offset, pagination.getLimit());
+		
+		return sqlSession.selectList("boardMapper.selectBoardList_search", paramMap, rowBounds);
+	}
+	/** 헤더 검색
+	 * @param query
+	 * @return list
+	 */
+	public List<Map<String, Object>> headerSearch(String query) {
+		return sqlSession.selectList("boardMapper.headerSearch", query);
+	}
+
+
+	public List<String> selectImageList() {
+		return sqlSession.selectList("boardMapper.selectImageListAll");
+
+
+	}
 }

@@ -6,7 +6,7 @@ const memberEmail = document.querySelector(
 const memberPw = document.querySelector("#loginFrm input[name ='memberPw']");
 
 //로그인 시도를 할 떄
-if (loginFrm != null)
+if (loginFrm != null) {
   loginFrm.addEventListener('submit', (e) => {
     // alert('로그인');
     // form태그 기본 이벤트 제거
@@ -29,6 +29,7 @@ if (loginFrm != null)
       return;
     }
   });
+}
 
 //비동기로 이메일이 일치하는 회원의 닉네임 조회
 function selectNickname(email) {
@@ -165,3 +166,9 @@ btn3.addEventListener('click', () => {
       console.log(err);
     });
 });
+
+// 웹소켓 테트
+// 1. SockJS 라이브러리 추가
+
+// 2. SockJS를 이용해서 클라이언트용 웹소켓 객체 생성
+let testSock = new SockJS('/testSock');
