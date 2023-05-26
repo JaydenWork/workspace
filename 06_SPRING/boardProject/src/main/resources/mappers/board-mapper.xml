@@ -312,7 +312,7 @@
 		VALUES(SEQ_IMG_NO.NEXTVAL, #{imagePath}, #{imageReName}, #{imageOriginal}, #{imageOrder}, #{boardNo})
 	</insert>
 	
-	
+	<!--게시글 삭제  -->
 	<update id="boardDelete">
 	 	UPDATE "BOARD" SET
 	 	BOARD_DEL_FL = 'Y'

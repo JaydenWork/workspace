@@ -187,12 +187,6 @@ public class MemberController {
 		String path = "redirect:";
 		
 		//path + "/" -> 메인페이
-		
-		
-	
-					
-		
-		
 		if(loginMember !=null) {
 			path += "/";  // 메인페이지로 리다이렉트(이미 만들어진 페이지로 넘김, 로그인 성공했다고 다른 창 생성 x)
 			
