@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <table>
+      <tr border="1">
+        <th>회원번호</th>
+        <th>회원아이디</th>
+        <th>회원이름</th>
+        <th>회원나이</th>
+      </tr>
+      <tr>
+        <th th:text="${user.userNo}">userNo</th>
+        <td th:text="${user.userId}">userId</td>
+        <td th:text="${user.userName}">userName</td>
+        <td th:text="${user.userAge}">userAge</td>
+      </tr>
+    </table>
+  </body>
+</html>
