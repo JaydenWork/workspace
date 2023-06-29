@@ -4,7 +4,8 @@
 
 
 <resultMap type="User" id="user_rm">
-<id property="userNo" column="USER_NO"/>
+	<!-- 프라이머리 키값 -->
+<id property="userNo" column="USER_NO"/> 
 
 <result property="userId" column="USER_ID"/>
 <result property="userName" column="USER_NAME"/>

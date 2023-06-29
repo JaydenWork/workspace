@@ -64,7 +64,7 @@ public class DBConfig {
 //		sessionFactoryBean.setTypeAliasesPackage("edu.kh.project.member.model.dto, edu.kh.project.board.model.dto");
 //		sessionFactoryBean.setTypeAliasesPackage("edu.kh.project.member.model.dto");
 		
-		sessionFactoryBean.setTypeAliasesPackage("edu.kh.project.member.model.dto, edu.kh.project.board.model.dto");
+		sessionFactoryBean.setTypeAliasesPackage("edu.kh.project.member.model.dto, edu.kh.project.board.model.dto, edu.kh.project.chatting.model.dto");
 		
 		//마이바티스 설정 파일 경로 지정
 		sessionFactoryBean.setConfigLocation(applicationContext.getResource("classpath:mybatis-config.xml"));

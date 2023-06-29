@@ -669,6 +669,7 @@ VALUES(SEQ_COMMENT_NO.NEXTVAL, '부모 댓글 2', DEFAULT, DEFAULT, 1502, 1, NUL
 
 COMMIT;
 
+SELECT * FROM BOARD_IMG BI ;
 
 /**
  * - 상위 타입과 하위 타입간의 관계를 계층식으로 표현할 수 있게하는 질의어(SELECT)

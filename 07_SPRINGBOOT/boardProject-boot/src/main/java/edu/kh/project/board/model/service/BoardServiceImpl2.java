@@ -78,7 +78,7 @@ public class BoardServiceImpl2 implements BoardService2{
 					
 					BoardImage img = new BoardImage();
 					
-					// img에 파일 정보를 담아서 uploadList에 추가
+					// img에 파일 정보를 담아서  List에 추가
 					img.setImagePath(webPath); // 웹 접근 경로
 					img.setBoardNo(boardNo); // 게시글 번호
 					img.setImageOrder(i); // 이미지 순서
